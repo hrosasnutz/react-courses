@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Java y Spring Boot desde cero",
+    "description": "Construye APIs REST con Java y Spring Boot.",
+    "instructor": "Carlos Pérez",
+    "category": "Backend",
+    "level": "Intermedio",
+    "duration": 20,
+    "price": 99.90,
+    "image": "https://placehold.co/600x400",
+    "rating": 4.8
+  }
+]
