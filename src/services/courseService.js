@@ -1,4 +1,4 @@
-const src = "/courses.json";
+const src = `${import.meta.env.BASE_URL}courses.json`;
 
 export function getAllCourses() {
   return fetch(src).then((r) => r.json());
