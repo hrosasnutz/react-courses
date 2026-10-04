@@ -12,7 +12,7 @@ export function useFilterOptions(fetchFn) {
             id: name.toLowerCase(),
             name,
             checked: false,
-          }))
+          })),
         );
       })
       .catch(console.error)
@@ -22,10 +22,14 @@ export function useFilterOptions(fetchFn) {
   const toggle = (id) => {
     setItems((prev) =>
       prev.map((item) =>
-        item.id === id ? { ...item, checked: !item.checked } : item
-      )
+        item.id === id ? { ...item, checked: !item.checked } : item,
+      ),
     );
   };
 
-  return { items, toggle, loading };
+  const reset = () => {
+    setItems((prev) => prev.map((item) => ({ ...item, checked: false })));
+  };
+
+  return { items, toggle, reset, loading };
 }

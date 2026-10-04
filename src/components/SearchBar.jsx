@@ -18,6 +18,11 @@ export default function SearchBar({ onSearch }) {
       return;
     }
 
+    if (ratings[0] > ratings[1]) {
+      alert("La valoración mínima no puede ser mayor a la máxima");
+      return;
+    }
+
     const selectedCategories = categories.items
       .filter((i) => i.checked)
       .map((i) => i.name);
@@ -39,8 +44,8 @@ export default function SearchBar({ onSearch }) {
     setName("");
     setPrices([0, 200]);
     setRatings([0, 5]);
-    categories.items.forEach(item => item.checked = false);
-    levels.items.forEach(item => item.checked = false);
+    categories.reset();
+    levels.reset();
     onSearch({
       name: "",
       categories: [],
